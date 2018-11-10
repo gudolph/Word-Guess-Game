@@ -23,20 +23,27 @@ onload = function () {
         var guess = String.fromCharCode(event.which);
 
         console.log(guess);
-        if (guess != keyword[j]) {
-            guessArray.push(guess);
-            console.log(guessArray);
-            document.getElementById("guessed").innerHTML = guessArray.toString("  ");
-        };
+
         for (var j = 0; j < keyword.length; j++) {
             if (guess == keyword[j]) {
                 letterArray[j] = guess;
+                console.log(guess == keyword[j]);
             };
         };
-        for (var remaining = keyword.length; remaining > 0; remaining--) {
-            document.getElementById("keyword").innerHTML = letterArray.join(" ");
-            console.log(remaining);
+        if (guess != keyword[j]) {
+            guessArray.push(guess);
+            console.log(guess != keyword[j]);
+            document.getElementById("guessed").innerHTML = guessArray.join("  ");
         };
+
+
+        //        for (var remaining = keyword.length; remaining > 0; remaining--) {
+        document.getElementById("keyword").innerHTML = letterArray.join(" ");
+        if (letterArray.join("") == keyword) {
+            alert("You guessed " + keyword + "! You win!");
+        }
+        //        };
+        //        console.log(remaining);
     });
 
 };

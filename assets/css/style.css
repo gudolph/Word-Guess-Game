@@ -34,6 +34,19 @@ img.banner {
     font-size: 32px;
 }
 
+
+.title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkred;
+    font-size: 28px;
+    margin-left: 30%;
+    margin-right: auto;   
+    margin-top: 20px;
+    width: 40%;
+    height: 30px;
+}
+
 #guessed {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -41,7 +54,7 @@ img.banner {
     margin-left: 30%;
     margin-right: auto;   
     margin-top: 20px;
-    border: 3px solid brown;
+    border: 3px dashed green;
     width: 40%;
     height: 100px;
 }
