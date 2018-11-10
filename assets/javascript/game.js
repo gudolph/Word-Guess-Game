@@ -18,26 +18,28 @@ onload = function () {
     console.log(keyword);
     console.log(letterArray);
 
-
-    var remaining = keyword.length;
-    while (remaining > 0) {
+    for (var remaining = keyword.length; remaining > 0; remaining--) {
         document.getElementById("keyword").innerHTML = letterArray.join(" ");
+        console.log(remaining);
+
         document.addEventListener("keypress", function (event) {
             var guess = String.fromCharCode(event.which);
+            
             console.log(guess);
-            for (var j = 0; 0 < keyword.length; j++) {
-                if (guess === keyword[j]) {
+            for (var j = 0; j < keyword.length; j++) {
+                if (guess == keyword[j]) {
                     letterArray[j] = guess;
-                    remaining--;
-                    console.log(remaining);
-                
+                    console.log(letterArray);
                 };
                 if (guess != keyword[j]) {
                     document.getElementById("guessed").innerHTML = guess;
-                    { break; };
                 };
             };
+            for (var remaining = keyword.length; remaining > 0; remaining--) {
+                document.getElementById("keyword").innerHTML = letterArray.join(" ");
+                console.log(remaining);
+            };
         });
-            remaining = 0;
+
     };
 };
