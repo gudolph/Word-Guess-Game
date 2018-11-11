@@ -21,9 +21,8 @@ onload = function () {
     document.getElementById("keyword").innerHTML = letterArray.join(" ");
     document.addEventListener("keypress", function (event) {
         var guess = String.fromCharCode(event.which);
-
-        console.log(guess);
-
+        var remaining = 15 - guessArray.length;
+        document.getElementById("remaining").innerHTML = remaining + " guesses remaining!";
         for (var j = 0; j < keyword.length; j++) {
             if (guess == keyword[j]) {
                 letterArray[j] = guess;
@@ -39,6 +38,9 @@ onload = function () {
 
         //        for (var remaining = keyword.length; remaining > 0; remaining--) {
         document.getElementById("keyword").innerHTML = letterArray.join(" ");
+        if (remaining == 0) {
+            alert("You lose!")
+        }
         if (letterArray.join("") == keyword) {
             alert("You guessed " + keyword + "! You win!");
         }
