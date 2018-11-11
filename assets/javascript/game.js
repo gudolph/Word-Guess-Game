@@ -37,7 +37,7 @@ onload = function () {
 
         document.getElementById("keyword").innerHTML = letterArray.join(" ");
         if (remaining == 0) {
-            alert("You lose!")
+            alert("The keyword was " + keyword + "! You lose!")
         }
         if (letterArray.join("") == keyword) {
             alert("You guessed " + keyword + "! You win!");
