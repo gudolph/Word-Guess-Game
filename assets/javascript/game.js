@@ -35,8 +35,6 @@ onload = function () {
             document.getElementById("guessed").innerHTML = guessArray.join("  ");
         };
 
-
-        //        for (var remaining = keyword.length; remaining > 0; remaining--) {
         document.getElementById("keyword").innerHTML = letterArray.join(" ");
         if (remaining == 0) {
             alert("You lose!")
@@ -44,8 +42,6 @@ onload = function () {
         if (letterArray.join("") == keyword) {
             alert("You guessed " + keyword + "! You win!");
         }
-        //        };
-        //        console.log(remaining);
     });
 
 };
